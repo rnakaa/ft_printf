@@ -16,5 +16,10 @@
 
 // int main()
 // {
-// 	printf("%d\n",printf("%s\n", NULL));
+// 	int		n;
+// 	int	*base;
+
+// 	*base = 10;
+// 	printf("%d",*base);
+// 	return 0;
 // }

@@ -6,7 +6,7 @@
 /*   By: rnaka <rnaka@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 20:01:13 by rnaka             #+#    #+#             */
-/*   Updated: 2022/10/31 23:14:56 by rnaka            ###   ########.fr       */
+/*   Updated: 2022/11/02 22:09:59 by rnaka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,19 @@
 static int	ft_disp(char fmt, va_list *args)
 {
 	if (fmt == 'c')
-		return (ft_putchar((int)va_arg(*args, int)));
+		return (ft_putchar(va_arg(*args, int)));
 	else if (fmt == 's')
 		return (ft_putstr(va_arg(*args, const char *)));
 	else if (fmt == 'p')
-		return (ft_putchr(va_arg(*args, void *)));
-	// else if (fmt == 'd' || fmt == 'i')
-	// 	return (ft_putnbr(va_arg(*args, int)));
+		return (ft_putpointer(va_arg(*args, unsigned long long)));
+	else if (fmt == 'd' || fmt == 'i')
+		return (ft_putnbr(va_arg(*args, int)));
 	// else if (fmt == 'u')
-	// 	return (ft_putchr(va_arg(*args, unsigned int)));
+	// 	return (ft_putchar(va_arg(*args, unsigned int)));
 	// else if (fmt == 'x')
-	// 	return (ft_putchr(va_arg(*args, unsigned int)));
+	// 	return (ft_putchar(va_arg(*args, unsigned int)));
 	// else if (fmt == 'X')
-	// 	return (ft_putchr(va_arg(*args, unsigned int)));
+	// 	return (ft_putchar(va_arg(*args, unsigned int)));
 	else if (fmt == '%')
 		return (write(1, "%", 1));
 	else
@@ -69,6 +69,9 @@ int	ft_printf(const char *fmt, ...)
 
 int main()
 {
-	printf("\n%d = %d\n", ft_printf("1234567%%%c%s%s",'a',"","bc"), printf("\n1234567%%%c%s%s",'a',"","bc")-1);
-	return 0;
+	int	a;
+
+	a = 10;
+	printf("\n%d = %d\n", ft_printf("%i%d", a, a), printf("\n%i%d", a, a) - 1);
+	return (0);
 }

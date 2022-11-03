@@ -6,7 +6,7 @@
 /*   By: rnaka <rnaka@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 20:01:13 by rnaka             #+#    #+#             */
-/*   Updated: 2022/11/02 22:09:59 by rnaka            ###   ########.fr       */
+/*   Updated: 2022/11/03 20:14:02 by rnaka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,16 @@ static int	ft_disp(char fmt, va_list *args)
 		return (ft_putstr(va_arg(*args, const char *)));
 	else if (fmt == 'p')
 		return (ft_putpointer(va_arg(*args, unsigned long long)));
-	else if (fmt == 'd' || fmt == 'i')
-		return (ft_putnbr(va_arg(*args, int)));
-	// else if (fmt == 'u')
-	// 	return (ft_putchar(va_arg(*args, unsigned int)));
-	// else if (fmt == 'x')
-	// 	return (ft_putchar(va_arg(*args, unsigned int)));
-	// else if (fmt == 'X')
-	// 	return (ft_putchar(va_arg(*args, unsigned int)));
+	else if (fmt == 'u' || fmt == 'i' || fmt == 'd')
+		return (ft_putnbrbase(va_arg(*args, int), 10, fmt, 0));
+	else if (fmt == 'x' || fmt == 'X')
+		return (ft_putnbrbase(va_arg(*args, unsigned int), 16, fmt, 0));
 	else if (fmt == '%')
 		return (write(1, "%", 1));
 	else
 		return (-1);
 	return (0);
-}	
+}
 
 int	ft_printf(const char *fmt, ...)
 {
@@ -67,11 +63,13 @@ int	ft_printf(const char *fmt, ...)
 	return (count);
 }
 
-int main()
+int	main()
 {
 	int	a;
+	int c;
 
 	a = 10;
-	printf("\n%d = %d\n", ft_printf("%i%d", a, a), printf("\n%i%d", a, a) - 1);
+	c = -16;
+	printf("\n%d = %d\n", ft_printf("%x%X", c, c), printf("\n%x%X", c, c) - 1);
 	return (0);
 }

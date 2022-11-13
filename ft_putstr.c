@@ -6,12 +6,11 @@
 /*   By: rnaka <rnaka@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 22:40:28 by rnaka             #+#    #+#             */
-/*   Updated: 2022/11/13 14:40:53 by rnaka            ###   ########.fr       */
+/*   Updated: 2022/11/13 16:33:45 by rnaka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "Libft/libft.h"
 
 int	ft_putstr(const char *str)
 {

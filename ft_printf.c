@@ -6,7 +6,7 @@
 /*   By: rnaka <rnaka@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 20:01:13 by rnaka             #+#    #+#             */
-/*   Updated: 2022/11/03 20:14:02 by rnaka            ###   ########.fr       */
+/*   Updated: 2022/11/13 14:35:40 by rnaka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,15 +61,4 @@ int	ft_printf(const char *fmt, ...)
 	}
 	va_end(args);
 	return (count);
-}
-
-int	main()
-{
-	int	a;
-	int c;
-
-	a = 10;
-	c = -16;
-	printf("\n%d = %d\n", ft_printf("%x%X", c, c), printf("\n%x%X", c, c) - 1);
-	return (0);
 }

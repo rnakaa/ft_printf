@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnaka <rnaka@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 19:28:09 by rnaka             #+#    #+#             */
-/*   Updated: 2022/11/13 19:32:23 by rnaka            ###   ########.fr       */
+/*   Created: 2022/07/09 15:49:26 by rnaka             #+#    #+#             */
+/*   Updated: 2022/11/13 16:34:01 by rnaka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
-int main()
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	len;
 
-	i = 0;
-
-	ft_printf("my = %u\n", -1);
-	printf("yu = %u\n", -1);
-	// ft_printf("%u\n", LONG_MIN);
-	// printf("%u\n", LONG_MIN);
-	return (0);
+	len = 0;
+	while (str[len] != '\0')
+		len++;
+	return (len);
 }

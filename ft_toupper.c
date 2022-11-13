@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnaka <rnaka@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 19:28:09 by rnaka             #+#    #+#             */
-/*   Updated: 2022/11/13 19:32:23 by rnaka            ###   ########.fr       */
+/*   Created: 2022/09/19 18:10:00 by rnaka             #+#    #+#             */
+/*   Updated: 2022/11/13 16:34:12 by rnaka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
-int main()
+int	ft_toupper(int c)
 {
-	int	i;
-
-	i = 0;
-
-	ft_printf("my = %u\n", -1);
-	printf("yu = %u\n", -1);
-	// ft_printf("%u\n", LONG_MIN);
-	// printf("%u\n", LONG_MIN);
-	return (0);
+	if ('a' <= c && c <= 'z')
+		c = c - 'a' + 'A';
+	return (c);
 }

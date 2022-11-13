@@ -6,7 +6,7 @@
 /*   By: rnaka <rnaka@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 20:01:13 by rnaka             #+#    #+#             */
-/*   Updated: 2022/11/13 14:35:40 by rnaka            ###   ########.fr       */
+/*   Updated: 2022/11/13 19:42:16 by rnaka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,10 @@ static int	ft_disp(char fmt, va_list *args)
 		return (ft_putstr(va_arg(*args, const char *)));
 	else if (fmt == 'p')
 		return (ft_putpointer(va_arg(*args, unsigned long long)));
-	else if (fmt == 'u' || fmt == 'i' || fmt == 'd')
+	else if (fmt == 'i' || fmt == 'd')
 		return (ft_putnbrbase(va_arg(*args, int), 10, fmt, 0));
+	else if (fmt == 'u')
+		return (ft_putulong(va_arg(*args, int), 10, fmt, 0));
 	else if (fmt == 'x' || fmt == 'X')
 		return (ft_putnbrbase(va_arg(*args, unsigned int), 16, fmt, 0));
 	else if (fmt == '%')

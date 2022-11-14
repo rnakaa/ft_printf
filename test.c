@@ -6,7 +6,7 @@
 /*   By: rnaka <rnaka@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 19:28:09 by rnaka             #+#    #+#             */
-/*   Updated: 2022/11/13 19:32:23 by rnaka            ###   ########.fr       */
+/*   Updated: 2022/11/14 20:28:54 by rnaka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int main()
 
 	i = 0;
 
-	ft_printf("my = %u\n", -1);
-	printf("yu = %u\n", -1);
+	ft_printf("my = %u\n", UINT_MAX);
+	printf("yu = %u\n", UINT_MAX);
 	// ft_printf("%u\n", LONG_MIN);
 	// printf("%u\n", LONG_MIN);
 	return (0);
